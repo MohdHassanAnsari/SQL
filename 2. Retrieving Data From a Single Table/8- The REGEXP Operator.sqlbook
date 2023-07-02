@@ -1,0 +1,41 @@
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP 'eld' -- any where in STRING
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP '^bru' -- ^ = begging of the string
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP 'eld$' -- $ = End of the string
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE
+    last_name REGEXP 'bru|gey|rey' -- | => OR
+-- SQLBook: Code
+SELECT * FROM customers WHERE last_name REGEXP 'gey$|^mac|net' 
+-- SQLBook: Code
+SELECT * FROM customers 
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP '[abe]y' -- should have a or b or c before y
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP 'e[aby]' -- should have a or b or y after e
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE last_name REGEXP '[a-r]e' -- should have a to r before e
+-- SQLBook: Code
+SELECT * FROM customers WHERE first_name REGEXP 'ELKA|AMBUR' 
+-- SQLBook: Code
+SELECT * FROM customers WHERE last_name REGEXP 'EY$|ON$' 
+-- SQLBook: Code
+SELECT * FROM customers WHERE last_name REGEXP '^MY|SE' 
+-- SQLBook: Code
+SELECT * FROM customers WHERE last_name REGEXP 'B[RU]' 

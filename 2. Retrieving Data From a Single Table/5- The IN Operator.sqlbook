@@ -1,0 +1,11 @@
+-- SQLBook: Code
+SELECT * FROM customers WHERE state IN ('VA', 'MA', 'FL') 
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE
+    state NOT IN ('VA', 'MA', 'FL') -- for out side of those state ('VA', 'MA', 'FL')
+-- SQLBook: Code
+-- Exorcise
+
+SELECT * FROM products WHERE quantity_in_stock IN (49, 38, 72) 

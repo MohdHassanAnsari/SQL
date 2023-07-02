@@ -1,0 +1,14 @@
+-- SQLBook: Code
+-- Active: 1688299935880@@127.0.0.1@3306@sql_store
+
+USE sql_store;
+-- SQLBook: Code
+-- Active: 1688299935880@@127.0.0.1@3306@sql_store
+
+-- Exercise
+
+SELECT
+    name,
+    unit_price AS price,
+    unit_price * 1.5 AS new_price -- or => 'new price'
+FROM products

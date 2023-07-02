@@ -1,0 +1,16 @@
+-- SQLBook: Code
+-- Active: 1688299935880@@127.0.0.1@3306@sql_store
+
+SELECT * FROM customers WHERE points > 2000 
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE state = 'MA' -- not case sensitive => state = 'ma' will get same result
+-- SQLBook: Code
+SELECT *
+FROM customers
+WHERE state != 'MA' -- or can use => state <> 'MA' both are exact same
+-- SQLBook: Code
+-- Exercise
+
+SELECT * FROM orders WHERE order_date >= '2019-01-01' 

@@ -1,0 +1,29 @@
+-- SQLBook: Code
+SELECT * FROM customers WHERE last_name LIKE 'brush%' 
+-- SQLBook: Code
+SELECT *
+FROM customers LIKE 'b%' -- start with B
+-- SQLBook: Code
+SELECT *
+FROM customers LIKE '%b' -- ends with B
+-- SQLBook: Code
+SELECT *
+FROM customers LIKE '%b%' -- in between with B
+-- SQLBook: Code
+SELECT *
+FROM customers LIKE '_b' -- after first character is B
+-- SQLBook: Code
+SELECT *
+FROM customers LIKE '_____y' -- after 5 character is y (y position is at 6th char)
+-- SQLBook: Code
+SELECT * FROM customers LIKE 'b____y' 
+-- SQLBook: Code
+-- Exorcise
+
+SELECT * FROM customers WHERE address LIKE '%TRAIL%' OR '%AVENUE%' 
+-- SQLBook: Code
+-- Exorcise
+
+SELECT *
+FROM customers
+WHERE phone LIKE '%9' -- Ends with 9

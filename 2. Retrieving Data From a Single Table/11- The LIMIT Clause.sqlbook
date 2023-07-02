@@ -1,0 +1,8 @@
+-- SQLBook: Code
+SELECT * FROM customers LIMIT 5 
+-- SQLBook: Code
+SELECT *
+FROM customers
+LIMIT 5, 8 -- 5 is offset and 8 is is after 5 get 8(limit) recodes
+-- SQLBook: Code
+SELECT * FROM customers ORDER BY points DESC LIMIT 3 

@@ -1,0 +1,4 @@
+-- SQLBook: Code
+SELECT * FROM customers WHERE phone IS NULL 
+-- SQLBook: Code
+SELECT * FROM orders WHERE shipped_date IS NULL 
