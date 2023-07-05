@@ -1,0 +1,11 @@
+-- SQLBook: Code
+SELECT *
+FROM employees e
+    JOIN employees m ON e.reports_to = m.employee_id
+-- SQLBook: Code
+SELECT
+    e.employee_id,
+    e.first_name,
+    m.first_name AS 'manager'
+FROM employees e
+    JOIN employees m ON m.reports_to = e.employee_id

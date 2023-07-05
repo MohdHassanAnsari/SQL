@@ -1,0 +1,20 @@
+-- SQLBook: Code
+SELECT
+    c.first_name AS customer,
+    p.name AS product
+FROM customers c
+    CROSS JOIN products p
+ORDER BY c.first_name
+-- SQLBook: Code
+SELECT
+    c.first_name AS customer,
+    p.name AS product
+FROM customers c, products p
+ORDER BY c.first_name
+-- SQLBook: Code
+SELECT
+    sh.name AS shipper,
+    p.name AS product
+FROM shippers sh
+    CROSS JOIN products p
+ORDER BY sh.name

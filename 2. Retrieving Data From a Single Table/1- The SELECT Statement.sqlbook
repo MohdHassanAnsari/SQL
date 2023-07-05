@@ -1,8 +1,4 @@
 -- SQLBook: Code
--- Active: 1688299935880@@127.0.0.1@3306@sql_store
-
 USE sql_store;
 -- SQLBook: Code
--- Active: 1688299935880@@127.0.0.1@3306@sql_store
-
 SELECT * FROM customers 

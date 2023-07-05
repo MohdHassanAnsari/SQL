@@ -1,0 +1,43 @@
+-- SQLBook: Code
+SELECT
+    o.order_id,
+    o.order_date,
+    'active' AS status
+FROM orders o
+WHERE
+    o.order_date >= '2019-01-01'
+UNION
+SELECT
+    o.order_id,
+    o.order_date,
+    'archive' AS status
+FROM orders o
+WHERE o.order_date < '2019-01-01'
+-- SQLBook: Code
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.points,
+    'Br'
+FROM customers c
+WHERE
+    c.points BETWEEN 1000 AND 2000
+UNION
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.points,
+    'silver'
+FROM customers c
+WHERE
+    c.points BETWEEN 2000 AND 3000
+UNION
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.points,
+    'gol'
+FROM customers c
+WHERE c.points > 3000
+ORDER BY first_name
+-- SQLBook: Code
