@@ -1,0 +1,25 @@
+-- SQLBook: Code
+SELECT
+    MAX(invoice_total) AS highest,
+    min(invoice_total) AS lowest,
+    AVG(invoice_total) AS average,
+    SUM(invoice_total) AS total,
+    COUNT(invoice_total) AS number_of_invoices,
+    COUNT(payment_date) AS count_of_payment,
+    -- returns not null values ROW_COUNT and all DUPLICATE values
+    COUNT(*) AS total_records,
+    COUNT(DISTINCT client_id) AS total_records
+FROM invoices
+-- SQLBook: Code
+SELECT
+    MAX(invoice_total) AS highest,
+    min(invoice_total) AS lowest,
+    AVG(invoice_total) AS average,
+    SUM(invoice_total) AS total,
+    COUNT(invoice_total) AS number_of_invoices,
+    COUNT(payment_date) AS count_of_payment,
+    -- returns not null values ROW_COUNT and all DUPLICATE values
+    COUNT(*) AS total_records,
+    COUNT(DISTINCT client_id) AS total_records
+FROM invoices
+WHERE invoice_date > '2019-01-01'
