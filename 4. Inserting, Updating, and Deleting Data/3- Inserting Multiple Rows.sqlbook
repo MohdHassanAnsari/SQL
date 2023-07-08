@@ -1,0 +1,11 @@
+-- SQLBook: Code
+INSERT INTO shippers(name)
+VALUES ('Shipper-1'), ('Shipper-1'), ('Shipper-1')
+-- SQLBook: Code
+INSERT INTO
+    products (
+        name,
+        quantity_in_stock,
+        unit_price
+    )
+VALUES ('Product-1', 5, 2.00), ('Product-1', 7, 3.05), ('Product-1', 2, 2.76)

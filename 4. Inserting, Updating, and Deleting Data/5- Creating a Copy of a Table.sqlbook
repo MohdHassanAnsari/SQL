@@ -1,0 +1,23 @@
+-- SQLBook: Code
+CREATE TABLE orders_archive AS SELECT * FROM orders 
+-- SQLBook: Code
+CREATE TABLE orders_archive
+SELECT *
+FROM orders
+WHERE order_date > '2018-01-01'
+-- SQLBook: Code
+SELECT * FROM invoices 
+-- SQLBook: Code
+CREATE TABLE orders_archive
+SELECT
+    i.client_id,
+    i.number,
+    c.name AS 'clients',
+    i.invoice_total,
+    i.payment_total,
+    i.invoice_date,
+    i.due_date,
+    i.payment_date
+FROM invoices i
+    JOIN clients c USING (client_id)
+WHERE payment_date IS NOT NULL

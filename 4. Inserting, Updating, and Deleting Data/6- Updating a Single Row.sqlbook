@@ -1,0 +1,13 @@
+-- SQLBook: Code
+UPDATE invoices
+SET
+    payment_total = 12,
+    payment_date = '2018-01-01'
+WHERE invoice_id = 1
+-- SQLBook: Code
+UPDATE invoices
+SET
+    payment_total = DEFAULT,
+    payment_date = NULL
+WHERE invoice_id = 1
+-- SQLBook: Code
