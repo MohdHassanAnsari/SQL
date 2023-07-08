@@ -1,0 +1,23 @@
+-- SQLBook: Code
+SELECT *
+FROM (
+        SELECT client_id, name, (
+                SELECT
+                    SUM(invoice_total)
+                FROM
+                    sql_invoicing.invoices
+                WHERE
+                    client_id = c.client_id
+            ) AS total_sales, (
+                SELECT
+                    AVG(invoice_total)
+                FROM
+                    sql_invoicing.invoices
+            ) AS average, (
+                SELECT
+                    total_sales - average
+            ) AS difference
+        FROM
+            sql_invoicing.clients c
+    ) AS sales_summery
+WHERE total_sales IS NOT NULL

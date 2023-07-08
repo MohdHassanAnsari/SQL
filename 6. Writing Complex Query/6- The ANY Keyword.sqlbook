@@ -1,0 +1,11 @@
+-- SQLBook: Code
+SELECT *
+FROM clients
+WHERE
+    client_id = ANY (
+        -- ANY is === IN
+        SELECT client_id
+        FROM invoices
+        GROUP BY client_id
+        HAVING COUNT(*) >= 2 I
+    )
