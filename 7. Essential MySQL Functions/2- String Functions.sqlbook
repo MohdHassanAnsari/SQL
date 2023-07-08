@@ -1,0 +1,24 @@
+-- SQLBook: Code
+'https://dev.mysql.com/doc/refman/8.0/en/string-functions.html' 
+-- SQLBook: Code
+SELECT LENGTH('sky') AS 'length' 
+-- SQLBook: Code
+SELECT UPPER('sky') AS 'length' 
+-- SQLBook: Code
+SELECT LOWER('sky') AS 'length' 
+-- SQLBook: Code
+SELECT TRIM('sky') AS 'length' -- L or R
+-- SQLBook: Code
+SELECT LEFT('Hassan', 2) -- Right
+-- SQLBook: Code
+SELECT
+    SUBSTRING('Hassan', 2, 4) -- default last word
+-- SQLBook: Code
+SELECT LOCATE('s', 'Hassan') -- Answer will be 3
+-- SQLBook: Code
+SELECT
+REPLACE ('Hassan', 'ss', 'ee') -- Answer will be 3
+-- SQLBook: Code
+SELECT CONCAT('Has', 'san') -- Answer will be 3
+-- SQLBook: Code
+SELECT CONCAT(first_name, ' ', last_name) FROM customers 

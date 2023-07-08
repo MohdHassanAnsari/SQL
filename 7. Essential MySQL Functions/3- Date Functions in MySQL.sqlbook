@@ -1,0 +1,14 @@
+-- SQLBook: Code
+SELECT NOW() 
+-- SQLBook: Code
+SELECT CURDATE() 
+-- SQLBook: Code
+SELECT CURTIME() 
+-- SQLBook: Code
+SELECT YEAR(NOW()), DAY(NOW()), MONTH(NOW()), SECOND(NOW()) 
+-- SQLBook: Code
+SELECT MONTHNAME(NOW()) 
+-- SQLBook: Code
+SELECT EXTRACT(YEAR FROM NOW()) 
+-- SQLBook: Code
+SELECT * FROM orders WHERE YEAR(order_date) < YEAR(NOW()) 

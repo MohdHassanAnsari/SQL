@@ -1,0 +1,51 @@
+-- SQLBook: Code
+SELECT
+    order_id,
+    order_date,
+    IF(
+        YEAR(order_date) = YEAR(NOW()),
+        'Active',
+        'Archived'
+    )
+FROM orders
+-- SQLBook: Code
+SELECT
+    order_id,
+    order_date,
+    IF( (order_date > '2019-01-01'),
+        'Active',
+        'Archived'
+    )
+FROM orders
+-- SQLBook: Code
+SELECT
+    order_id,
+    order_date,
+    IF(
+        YEAR(order_date) = YEAR(NOW()) -- condition,
+        'Active' -- on true,
+        'Archived' -- on false
+    )
+FROM orders
+-- SQLBook: Code
+SELECT
+    order_id,
+    order_date,
+    IF( (order_date > '2019-01-01') -- condition,
+        'Active' -- when true,
+        'Archived' -- when false
+    )
+FROM orders
+-- SQLBook: Code
+SELECT
+    product_id,
+    name,
+    COUNT(*) AS orders,
+    IF (
+        count(*) > 1,
+        'Many times',
+        'Once'
+    ) AS frequency
+FROM products
+    JOIN order_items USING (product_id)
+GROUP BY product_id, name

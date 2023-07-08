@@ -1,0 +1,19 @@
+-- SQLBook: Code
+SELECT
+    order_id,
+    IFNULL(shipper_id, 'Not assigned') AS shipper
+FROM orders
+-- SQLBook: Code
+SELECT
+    order_id,
+    COALESCE(
+        shipper_id,
+        comments,
+        'Not assigned'
+    ) AS shipper
+FROM orders
+-- SQLBook: Code
+SELECT
+    CONCAT(first_name, ' ', last_name) AS customer,
+    COALESCE(phone, 'Unknown') AS phone
+FROM customers
