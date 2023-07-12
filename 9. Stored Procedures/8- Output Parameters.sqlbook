@@ -1,0 +1,29 @@
+-- SQLBook: Code
+CREATE PROCEDURE GET_UNPAID_INVOICES_FOR_CLIENT(CLIENT_ID 
+INT) BEGIN 
+	SELECT
+	    COUNT(*),
+	    SUM(invoice_total)
+	FROM invoices i
+	WHERE
+	    i.client_id = client_id
+	    AND payment_total = 0;
+	END 
+
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE GET_UNPAID_INVOICES_FOR_CLIENT(CLIENT_ID 
+INT, OUT INVOICE_COUNT INT, OUT INVOICE_TOTAL DECIMAL
+(9, 2)) BEGIN 
+	SELECT
+	    COUNT(*),
+	    SUM(invoice_total) INTO invoice_count,
+	    invoice_total
+	FROM invoices i
+	WHERE
+	    i.client_id = client_id
+	    AND payment_total = 0;
+END$ 
+
+DELIMITER ;

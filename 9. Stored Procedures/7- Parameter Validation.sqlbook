@@ -1,0 +1,40 @@
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE MAKE_PAYMENTS(INVOICE_ID INT, PAYMENT_AMOUNT 
+DECIMAL(9, 2), PAYMENT_DATE DATE) BEGIN 
+	UPDATE
+	    sql_invoicing.invoices i
+	SET
+	    i.payment_total = PAYMENT_AMOUNT,
+	    i.payment_date = PAYMENT_DATE
+	WHERE
+	    i.invoice_id = invoice_id;
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+DROP PROCEDURE `MAKE_PAYMENTS`;
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE MAKE_PAYMENTS(INVOICE_ID INT, PAYMENT_AMOUNT 
+DECIMAL(9, 2), PAYMENT_DATE DATE) BEGIN 
+	IF PAYMENT_AMOUNT <= 0 THEN SIGNAL SQLSTATE '22003'
+	SET
+	    MESSAGE_TEXT = 'Invalid Payment Amount';
+	END IF;
+	UPDATE
+	    sql_invoicing.invoices i
+	SET
+	    i.payment_total = PAYMENT_AMOUNT,
+	    i.payment_date = PAYMENT_DATE
+	WHERE
+	    i.invoice_id = invoice_id;
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+CALL MAKE_PAYMENTS(2, -100, DATE(NOW())) 
+-- SQLBook: Code
+CALL MAKE_PAYMENTS(2, 100, DATE(NOW())) 

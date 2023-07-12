@@ -1,0 +1,47 @@
+-- SQLBook: Code
+DROP PROCEDURE IF EXISTS GET_CLIENTS_BY_STATE;
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE GET_CLIENTS_BY_STATE(STATE CHAR(2)
+) BEGIN 
+	IF state IS NULL THEN SET state = 'CA';
+	END IF;
+	SELECT * FROM sql_invoicing.clients c WHERE c.state = state;
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+CALL `GET_CLIENTS_BY_STATE`(NULL) 
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE GET_CLIENTS_BY_STATE(STATE CHAR(2)
+) BEGIN 
+	IF state IS NULL THEN SET state = 'CA';
+	END IF;
+	SELECT *
+	FROM sql_invoicing.clients c
+	WHERE
+	    c.state = IFNULL(state, c.state);
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE GET_PAYMENTS(CLIENT_ID INT, PAYMENT_METHOD_ID 
+TINYINT) BEGIN 
+	SELECT *
+	FROM sql_invoicing.payments p
+	WHERE
+	    p.client_id = IFNULL(client_id, p.client_id)
+	    AND p.payment_method = IFNULL(
+	        payment_method_id,
+	        p.payment_method
+	    );
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+CALL GET_PAYMENTS(1, NULL) 

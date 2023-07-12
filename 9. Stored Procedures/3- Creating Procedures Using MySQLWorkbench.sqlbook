@@ -1,0 +1,10 @@
+-- SQLBook: Code
+DELIMITER $
+
+CREATE PROCEDURE GET_PAYMENT() BEGIN 
+	SELECT * FROM sql_invoicing.payments;
+END$ 
+
+DELIMITER ;
+-- SQLBook: Code
+CALL GET_PAYMENT() 
